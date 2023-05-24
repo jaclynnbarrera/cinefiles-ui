@@ -3,6 +3,7 @@ import sunriseImage from "../images/waves_sunrise.gif";
 import dayImage from "../images/Day_waves.gif";
 import duskImage from "../images/Waves_Dusk.gif";
 import nightImage from "../images/Waves_Night.gif";
+import "./background.css";
 
 function Background() {
   const [backgroundImage, setBackgroundImage] = useState(dayImage);
@@ -32,7 +33,7 @@ function Background() {
 
   return (
     <div className="Landing">
-      <img src={backgroundImage} alt="A gif of moving waves" />
+      <img class="bg" src={backgroundImage} alt="A gif of moving waves" />
     </div>
   );
 }
