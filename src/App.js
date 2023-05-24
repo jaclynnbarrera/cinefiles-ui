@@ -1,10 +1,10 @@
 import "./App.css";
-import Background from "./components/Background";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   return (
     <div className="App">
-      <Background />
+      <LandingPage />
     </div>
   );
 }
