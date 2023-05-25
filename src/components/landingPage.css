@@ -5,11 +5,16 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  /* padding: 20px; */
 }
 
 .cinefiles-logo {
   width: 80vw;
+  text-align: center;
+}
+
+.cinefiles-logo:hover {
+  content: url("../images//Enter_Logo.png");
+  width: 55vw;
   text-align: center;
 }
 
