@@ -18,8 +18,10 @@ function Home() {
   return (
     <div className="home-container">
       <div className="nav">
-        <div className="search-bar">
-          <p>search bar here</p>
+        <div>
+          <form class="search">
+            <input class="search" type="search" placeholder="Search..." />
+          </form>
         </div>
         <img className="cf-logo" src={cinefilesLogo} alt="Cinefiles logo" />
         <div className="time">
