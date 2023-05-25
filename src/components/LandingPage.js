@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import sunriseImage from "../images/waves_sunrise.gif";
 import dayImage from "../images/Day_waves.gif";
 import duskImage from "../images/Waves_Dusk.gif";
@@ -41,11 +42,13 @@ function LandingPage() {
       }}
     >
       <div>
-        <img
-          className="cinefiles-logo"
-          src={cinefilesLogo}
-          alt="Cinefiles logo"
-        />
+        <Link to="home">
+          <img
+            className="cinefiles-logo"
+            src={cinefilesLogo}
+            alt="Cinefiles logo"
+          />
+        </Link>
       </div>
       <div className="copy">
         <p>
