@@ -5,11 +5,11 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  align-items: center;
 }
 
 .cinefiles-logo {
   width: 80vw;
-  text-align: center;
 }
 
 .cinefiles-logo:hover {
@@ -27,5 +27,4 @@
 
 .studio-logos {
   width: 15vw;
-  text-align: center;
 }

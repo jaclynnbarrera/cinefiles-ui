@@ -41,7 +41,7 @@ function LandingPage() {
         backgroundImage: "url(" + backgroundImage + ")",
       }}
     >
-      <div>
+      <div className="cinefiles-logo">
         <Link to="home">
           <img
             className="cinefiles-logo"

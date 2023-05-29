@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import cinefilesLogo from "../images/Cine_Logo_1.png";
+import studioLogos from "../images/Studio_Logos_1.png";
 import "./home.css";
 
 function Home() {
@@ -18,21 +19,37 @@ function Home() {
   return (
     <div className="home-container">
       <div className="nav">
-        <div>
-          <form class="search">
-            <input class="search" type="search" placeholder="Search..." />
-          </form>
+        <div className="location">
+          <p>Brooklyn, NY</p>
         </div>
         <img className="cf-logo" src={cinefilesLogo} alt="Cinefiles logo" />
         <div className="time">
           <p>{time}</p>
         </div>
       </div>
-      <div>
-        <div>side bar</div>
-        <div>main content</div>
+
+      <div className="second-nav">
+        <div className="search">
+          <input className="input" type="text" placeholder="Search..." />
+        </div>
+        <div className="color">
+          <p>color</p>
+        </div>
+        <div className="year">
+          <p>year</p>
+        </div>
+        <div className="frame">
+          <p>frame</p>
+        </div>
+
+        <div className="resources">
+          <p>resources</p>
+        </div>
       </div>
-      <div>footer</div>
+
+      <div className="footer">
+        <img className="studio-logos" src={studioLogos} alt="studio logos" />
+      </div>
     </div>
   );
 }
