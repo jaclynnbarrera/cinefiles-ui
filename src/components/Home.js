@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import cinefilesLogo from "../images/Cine_Logo_1.png";
 import studioLogos from "../images/Studio_Logos_1.png";
+import bulletTrain from "../images/bullet-train.jpg";
 import "./home.css";
 
 function Home() {
@@ -8,6 +9,10 @@ function Home() {
 
   useEffect(() => {
     setInterval(updateTime(), 6000);
+  });
+
+  useEffect(() => {
+    // makes a call to get all images;
   });
 
   const updateTime = () => {
@@ -28,9 +33,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="second-nav">
+      <div className="filters">
         <div className="search">
-          <input className="input" type="text" placeholder="Search..." />
+          <p>search</p>
         </div>
         <div className="color">
           <p>color</p>
@@ -41,9 +46,11 @@ function Home() {
         <div className="frame">
           <p>frame</p>
         </div>
+      </div>
 
-        <div className="resources">
-          <p>resources</p>
+      <div className="main">
+        <div>
+          <img src={bulletTrain}></img>
         </div>
       </div>
 

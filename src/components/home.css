@@ -48,13 +48,14 @@
   width: 7vw;
 }
 
-.second-nav {
+.filters {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  font-size: 10px;
 }
 
-.second-nav > div {
+.filters > div {
   border: 0.5px solid black;
 }
 
@@ -67,4 +68,16 @@
 .search,
 .resources {
   flex: 1;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  margin: 20px;
+}
+
+.main img {
+  width: 200px;
 }
