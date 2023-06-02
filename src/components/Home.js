@@ -37,14 +37,26 @@ function Home() {
         <div className="search">
           <p>search</p>
         </div>
-        <div className="color">
-          <p>color</p>
+        <div className="title">
+          <p>title</p>
+        </div>
+        <div className="director">
+          <p>director</p>
+        </div>
+        <div className="dop">
+          <p>DOP</p>
+        </div>
+        <div className="actors">
+          <p>actors</p>
         </div>
         <div className="year">
           <p>year</p>
         </div>
         <div className="frame">
           <p>frame</p>
+        </div>
+        <div className="color">
+          <p>color</p>
         </div>
       </div>
 

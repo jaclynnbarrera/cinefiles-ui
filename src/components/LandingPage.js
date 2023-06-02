@@ -41,15 +41,18 @@ function LandingPage() {
         backgroundImage: "url(" + backgroundImage + ")",
       }}
     >
-      <div className="cinefiles-logo">
-        <Link to="home">
-          <img
-            className="cinefiles-logo"
-            src={cinefilesLogo}
-            alt="Cinefiles logo"
-          />
+      <div>
+        <Link to="/home">
+          <div className="cinefiles-logo">
+            <img
+              className="cinefiles-logo"
+              src={cinefilesLogo}
+              alt="Cinefiles logo"
+            />
+          </div>
         </Link>
       </div>
+
       <div className="copy">
         <p>
           A STUDIO 135 PROJECT. <br></br>CINEFILES IS A CREATIVE RESOURCE TO BE

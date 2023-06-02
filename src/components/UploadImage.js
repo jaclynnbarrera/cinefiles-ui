@@ -25,15 +25,12 @@ function UploadImage() {
       const response = await fetch("http://localhost:5000/uploadImage", {
         method: "POST",
         body: data,
-        mode: "no-cors",
       });
-
-      const result = response;
-      console.log("Success:", result.body);
+      const result = response.json();
+      console.log(result);
     } catch (error) {
       console.error("Error:", error);
     }
-
     // setFormData({ ...formData, file: data });
   };
 

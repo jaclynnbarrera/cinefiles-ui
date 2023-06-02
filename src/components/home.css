@@ -59,9 +59,13 @@
   border: 0.5px solid black;
 }
 
-.color,
+.title,
+.director,
+.dop,
+.actors,
 .year,
-.frame {
+.frame,
+.color {
   flex: 2;
 }
 
