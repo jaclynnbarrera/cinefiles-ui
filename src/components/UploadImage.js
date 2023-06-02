@@ -10,7 +10,7 @@ function UploadImage() {
     year: "2000",
     frame: "close-up",
     color: "blue",
-    file: null,
+    url: "",
   });
 
   const handleChange = (e) => {
@@ -26,12 +26,12 @@ function UploadImage() {
         method: "POST",
         body: data,
       });
-      const result = response.json();
-      console.log(result);
+
+      const image = await response.json();
+      setFormData({ ...formData, url: image.url });
     } catch (error) {
       console.error("Error:", error);
     }
-    // setFormData({ ...formData, file: data });
   };
 
   const handleSubmit = async (e) => {
@@ -54,64 +54,66 @@ function UploadImage() {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <label>title:</label>
-      <input
-        type="text"
-        name="title"
-        value={formData.title}
-        onChange={handleChange}
-      />
-      <label>director:</label>
-      <input
-        type="text"
-        name="director"
-        value={formData.director}
-        onChange={handleChange}
-      />
-      <label>DOP:</label>
-      <input
-        type="text"
-        name="dop"
-        value={formData.dop}
-        onChange={handleChange}
-      />
-      <label>actors:</label>
-      <input
-        type="text"
-        name="actors"
-        value={formData.actors}
-        onChange={handleChange}
-      />
-      <label>year:</label>
-      <input
-        type="text"
-        name="year"
-        value={formData.year}
-        onChange={handleChange}
-      />
-      <label>frame:</label>
-      <select name="frame" value={formData.frame} onChange={handleChange}>
-        <option value="long">long shot</option>
-        <option value="close">close-up</option>
-        <option value="medium">medium shot</option>
-        <option value="pov">POV</option>
-        <option value="pov">establishing shot</option>
-      </select>
-      <label>color:</label>
-      <select name="color" value={formData.color} onChange={handleChange}>
-        <option value="blue">blue</option>
-        <option value="green">green</option>
-        <option value="purple">purple</option>
-        <option value="red">red</option>
-        <option value="orange">orange</option>
-        <option value="yellow">yellow</option>
-        <option value="bw">black and white</option>
-      </select>
-      <label>image file:</label>
-      <input type="file" name="file" onChange={handleFileUpload} />
-      <button type="submit">Upload Image</button>
-    </form>
+    <>
+      <form className="form" onSubmit={handleSubmit}>
+        <label>title:</label>
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+        />
+        <label>director:</label>
+        <input
+          type="text"
+          name="director"
+          value={formData.director}
+          onChange={handleChange}
+        />
+        <label>DOP:</label>
+        <input
+          type="text"
+          name="dop"
+          value={formData.dop}
+          onChange={handleChange}
+        />
+        <label>actors:</label>
+        <input
+          type="text"
+          name="actors"
+          value={formData.actors}
+          onChange={handleChange}
+        />
+        <label>year:</label>
+        <input
+          type="text"
+          name="year"
+          value={formData.year}
+          onChange={handleChange}
+        />
+        <label>frame:</label>
+        <select name="frame" value={formData.frame} onChange={handleChange}>
+          <option value="long">long shot</option>
+          <option value="close">close-up</option>
+          <option value="medium">medium shot</option>
+          <option value="pov">POV</option>
+          <option value="pov">establishing shot</option>
+        </select>
+        <label>color:</label>
+        <select name="color" value={formData.color} onChange={handleChange}>
+          <option value="blue">blue</option>
+          <option value="green">green</option>
+          <option value="purple">purple</option>
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="bw">black and white</option>
+        </select>
+        <label>image file:</label>
+        <input type="file" name="file" onChange={handleFileUpload} />
+        <button type="submit">Upload Image</button>
+      </form>
+    </>
   );
 }
 
