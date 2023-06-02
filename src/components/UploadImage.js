@@ -3,14 +3,15 @@ import "./uploadImage.css";
 
 function UploadImage() {
   const [formData, setFormData] = useState({
+    description: "description",
+    color: "blue",
+    frame: "close-up",
+    url: "",
     title: "title",
     director: "director",
     dop: "DOP",
     actors: "actor",
     year: "2000",
-    frame: "close-up",
-    color: "blue",
-    url: "",
   });
 
   const handleChange = (e) => {
@@ -36,14 +37,13 @@ function UploadImage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData.file);
     try {
       const response = await fetch("http://localhost:5000/images", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData.file),
+        body: formData,
       });
 
       const result = await response.json();
@@ -111,6 +111,14 @@ function UploadImage() {
         </select>
         <label>image file:</label>
         <input type="file" name="file" onChange={handleFileUpload} />
+        <label>write a short description:</label>
+        <textarea
+          rows="5"
+          cols="33"
+          value={formData.description}
+          onChange={handleChange}
+          name="description"
+        ></textarea>
         <button type="submit">Upload Image</button>
       </form>
     </>
