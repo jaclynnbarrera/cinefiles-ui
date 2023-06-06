@@ -6,20 +6,32 @@ import "./home.css";
 
 function Home() {
   const [time, setTime] = useState("00:00");
-
-  useEffect(() => {
-    setInterval(updateTime(), 6000);
-  });
-
-  useEffect(() => {
-    // makes a call to get all images;
-  });
+  const [images, setImages] = useState([]);
 
   const updateTime = () => {
     const today = new Date();
     const time = today.getHours() + ":" + today.getMinutes();
     setTime(time);
   };
+
+  const getImages = async () => {
+    try {
+      let response = await fetch("http://localhost:5000/images");
+      response = await response.json();
+
+      setImages(response);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    setInterval(updateTime(), 6000);
+  });
+
+  useEffect(() => {
+    getImages();
+  }, []);
 
   return (
     <div className="home-container">
@@ -61,9 +73,8 @@ function Home() {
       </div>
 
       <div className="main">
-        <div>
-          <img src={bulletTrain}></img>
-        </div>
+        {/* image component */}
+        {images && images.map((image) => <img src={image.url} />)}
       </div>
 
       <div className="footer">

@@ -10,7 +10,7 @@ function UploadImage() {
     title: "title",
     director: "director",
     dop: "DOP",
-    actors: "actor",
+    actors: "",
     year: "2000",
   });
 
@@ -37,13 +37,14 @@ function UploadImage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const response = await fetch("http://localhost:5000/images", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
