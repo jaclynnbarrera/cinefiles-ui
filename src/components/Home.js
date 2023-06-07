@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import cinefilesLogo from "../images/Cine_Logo_1.png";
 import studioLogos from "../images/Studio_Logos_1.png";
 import bulletTrain from "../images/bullet-train.jpg";
+import Image from "./Image";
 import "./home.css";
 
 function Home() {
@@ -73,8 +74,10 @@ function Home() {
       </div>
 
       <div className="main">
-        {/* image component */}
-        {images && images.map((image) => <img src={image.url} />)}
+        {images &&
+          images.map((image) => (
+            <Image key={image.id} image={image.url} title={image.title} />
+          ))}
       </div>
 
       <div className="footer">

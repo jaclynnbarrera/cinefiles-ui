@@ -99,6 +99,7 @@ function UploadImage() {
           <option value="medium">medium shot</option>
           <option value="pov">POV</option>
           <option value="pov">establishing shot</option>
+          <option value="title">title card</option>
         </select>
         <label>color:</label>
         <select name="color" value={formData.color} onChange={handleChange}>
@@ -109,6 +110,7 @@ function UploadImage() {
           <option value="orange">orange</option>
           <option value="yellow">yellow</option>
           <option value="bw">black and white</option>
+          <option value="neutral">neutral</option>
         </select>
         <label>image file:</label>
         <input type="file" name="file" onChange={handleFileUpload} />

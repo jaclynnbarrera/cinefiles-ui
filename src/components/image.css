@@ -1,0 +1,20 @@
+.image_wrapper {
+  position: relative;
+}
+
+.img_description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  color: yellow;
+  text-transform: uppercase;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.image_wrapper:hover .img_description {
+  visibility: visible;
+}
