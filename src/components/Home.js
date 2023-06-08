@@ -26,8 +26,8 @@ function Home() {
   };
 
   useEffect(() => {
-    setInterval(updateTime(), 6000);
-  });
+    setInterval(updateTime, 6000);
+  }, []);
 
   useEffect(() => {
     getImages();
@@ -73,7 +73,82 @@ function Home() {
       </div>
 
       <div className="main">
-        {images && images.map((image, i) => <Image key={i} image={image} />)}
+        <div className="watch_list">
+          <h3>WATCH LIST</h3>
+          <ul>
+            <li>
+              <a href="google.com">Actors on Actors</a>
+            </li>
+            <li>
+              <a href="google.com">Mubi Release</a>
+            </li>
+            <li>
+              <a href="google.com">Sreenings</a>
+            </li>
+            <li>
+              <a href="google.com">Oppenheimer</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+          </ul>
+        </div>
+        <div className="image_gallery">
+          {images && images.map((image, i) => <Image key={i} image={image} />)}
+        </div>
+        <div className="links">
+          <h3>LINKS WE LIKE</h3>
+          <ul>
+            <li>
+              <a href="google.com">Actors on Actors</a>
+            </li>
+            <li>
+              <a href="google.com">Mubi Release</a>
+            </li>
+            <li>
+              <a href="google.com">Sreenings</a>
+            </li>
+            <li>
+              <a href="google.com">Oppenheimer</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+            <li>
+              <a href="google.com">Short Films</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="footer">
