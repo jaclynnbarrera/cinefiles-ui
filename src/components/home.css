@@ -17,8 +17,11 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 15vw;
   text-align: center;
+}
+
+.cf-logo img {
+  width: 15vw;
 }
 
 .time {
@@ -105,4 +108,9 @@ ul {
   padding: 0;
   margin: 0;
   line-height: 150%;
+}
+
+a:link,
+a:visited {
+  color: blue;
 }

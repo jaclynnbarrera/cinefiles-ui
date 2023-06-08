@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import cinefilesLogo from "../images/Cine_Logo_1.png";
 import studioLogos from "../images/Studio_Logos_1.png";
 import Image from "./Image";
@@ -39,7 +40,12 @@ function Home() {
         <div className="location">
           <p>Brooklyn, NY</p>
         </div>
-        <img className="cf-logo" src={cinefilesLogo} alt="Cinefiles logo" />
+        <div className="cf-logo">
+          <Link to="/">
+            <img src={cinefilesLogo} alt="Cinefiles logo" />
+          </Link>
+        </div>
+
         <div className="time">
           <p>{time}</p>
         </div>
