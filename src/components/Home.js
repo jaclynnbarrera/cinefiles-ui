@@ -5,10 +5,10 @@ import studioLogos from "../images/Studio_Logos_1.png";
 import Image from "./Image";
 import "./home.css";
 import Search from "./Search";
+import { useQuery } from "react-query";
 
 function Home() {
   const [time, setTime] = useState("00:00");
-  const [images, setImages] = useState([]);
 
   const updateTime = () => {
     const today = new Date();
@@ -16,23 +16,21 @@ function Home() {
     setTime(time);
   };
 
+  // move to API folder?
   const getImages = async () => {
     try {
       let response = await fetch("http://localhost:5000/images");
       response = await response.json();
-
-      setImages(response);
+      return response;
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  useEffect(() => {
-    setInterval(updateTime, 6000);
-  }, []);
+  const { data } = useQuery("images", getImages);
 
   useEffect(() => {
-    getImages();
+    setInterval(updateTime, 6000);
   }, []);
 
   return (
@@ -107,7 +105,7 @@ function Home() {
           </ul>
         </div>
         <div className="image_gallery">
-          {images && images.map((image, i) => <Image key={i} image={image} />)}
+          {data && data.map((image, i) => <Image key={i} image={image} />)}
         </div>
         <div className="links">
           <h3>LINKS</h3>
