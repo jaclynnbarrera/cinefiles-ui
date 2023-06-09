@@ -4,6 +4,7 @@ import cinefilesLogo from "../images/Cine_Logo_1.png";
 import studioLogos from "../images/Studio_Logos_1.png";
 import Image from "./Image";
 import "./home.css";
+import Search from "./Search";
 
 function Home() {
   const [time, setTime] = useState("00:00");
@@ -53,19 +54,7 @@ function Home() {
 
       <div className="filters">
         <div className="search">
-          <p>search</p>
-        </div>
-        <div className="title">
-          <p>title</p>
-        </div>
-        <div className="director">
-          <p>director</p>
-        </div>
-        <div className="dop">
-          <p>DOP</p>
-        </div>
-        <div className="actors">
-          <p>actors</p>
+          <Search />
         </div>
         <div className="year">
           <p>year</p>
@@ -75,6 +64,9 @@ function Home() {
         </div>
         <div className="color">
           <p>color</p>
+        </div>
+        <div className="genre">
+          <p>genre</p>
         </div>
       </div>
 
@@ -118,7 +110,7 @@ function Home() {
           {images && images.map((image, i) => <Image key={i} image={image} />)}
         </div>
         <div className="links">
-          <h3>LINKS WE LIKE</h3>
+          <h3>LINKS</h3>
           <ul>
             <li>
               <a href="google.com">Actors on Actors</a>
