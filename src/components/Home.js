@@ -1,33 +1,36 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Image from "./Image";
+import useImages from "../hooks/useImages";
 import cinefilesLogo from "../images/Cine_Logo_1.png";
 import studioLogos from "../images/Studio_Logos_1.png";
-import Image from "./Image";
 import "./home.css";
-import Search from "./Search";
-import { useQuery } from "react-query";
 
 function Home() {
   const [time, setTime] = useState("00:00");
+  const [filters, setFilters] = useState({
+    searchTerm: "",
+    frame: "",
+    color: "",
+    year: 0,
+  });
+
+  const { data } = useImages(filters);
+
+  const handleChange = (e) => {
+    setFilters({ ...filters, [e.target.name]: e.target.value });
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    setFilters({ ...filters, [e.target.name]: e.target.value });
+  };
 
   const updateTime = () => {
     const today = new Date();
     const time = today.getHours() + ":" + today.getMinutes();
     setTime(time);
   };
-
-  // move to API folder?
-  const getImages = async () => {
-    try {
-      let response = await fetch("http://localhost:5000/images");
-      response = await response.json();
-      return response;
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  const { data } = useQuery("images", getImages);
 
   useEffect(() => {
     setInterval(updateTime, 6000);
@@ -52,7 +55,16 @@ function Home() {
 
       <div className="filters">
         <div className="search">
-          <Search />
+          <form onSubmit={handleSearchSubmit}>
+            <input
+              type="search"
+              id="search"
+              name="searchTerm"
+              placeholder="search by title..."
+              value={filters.searchTerm}
+              onChange={handleChange}
+            />
+          </form>
         </div>
         <div className="year">
           <p>year</p>
