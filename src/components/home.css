@@ -55,7 +55,7 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .filters > div {
@@ -64,13 +64,13 @@
 
 .year,
 .frame,
-.color,
+.color-dropdown,
 .genre {
-  flex: 1;
+  width: 17.5vw;
 }
 
 .search {
-  flex: 1.5;
+  width: 29.5vw;
 }
 
 .main {
@@ -117,5 +117,60 @@ a:visited {
 
 input {
   width: 100%;
-  padding: 7px;
+  padding: 9px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: green;
+  width: 17.5vw;
+}
+
+.color-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.color-test {
+  background-color: blue;
+}
+
+#blue {
+  background-color: blue;
+  color: blue;
+}
+
+#green {
+  background-color: green;
+  color: green;
+}
+
+#purple {
+  background-color: purple;
+  color: purple;
+}
+
+#red {
+  background-color: red;
+  color: red;
+}
+
+#orange {
+  background-color: orange;
+  color: orange;
+}
+
+#yellow {
+  background-color: yellow;
+  color: yellow;
+}
+
+#neutral {
+  background-color: burlywood;
+  color: burlywood;
+}
+
+#bw {
+  background-color: black;
+  color: black;
 }

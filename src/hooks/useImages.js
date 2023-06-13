@@ -4,8 +4,12 @@ import { api } from "../api/api";
 const useImages = (filters) =>
   useQuery("images", api.get, {
     select: (images) =>
-      images.filter((image) =>
-        image.title.toLowerCase().includes(filters.searchTerm.toLowerCase())
+      images.filter(
+        (image) =>
+          image.title
+            .toLowerCase()
+            .includes(filters.searchTerm.toLowerCase()) &&
+          image.color.toLowerCase().includes(filters.color.toLowerCase())
       ),
   });
 

@@ -14,10 +14,20 @@ function Home() {
     color: "",
     year: 0,
   });
+  const colorOptions = [
+    "blue",
+    "green",
+    "purple",
+    "red",
+    "orange",
+    "yellow",
+    "neutral",
+    "bw",
+  ];
 
   const { data } = useImages(filters);
 
-  const handleChange = (e) => {
+  const handleSearchInputChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
@@ -30,6 +40,10 @@ function Home() {
     const today = new Date();
     const time = today.getHours() + ":" + today.getMinutes();
     setTime(time);
+  };
+
+  const handleColorOptionClick = (e) => {
+    setFilters({ ...filters, color: e.target.id });
   };
 
   useEffect(() => {
@@ -62,7 +76,7 @@ function Home() {
               name="searchTerm"
               placeholder="search by title..."
               value={filters.searchTerm}
-              onChange={handleChange}
+              onChange={handleSearchInputChange}
             />
           </form>
         </div>
@@ -72,8 +86,17 @@ function Home() {
         <div className="frame">
           <p>frame</p>
         </div>
-        <div className="color">
+        <div className="color-dropdown">
           <p>color</p>
+          <div className="dropdown-content">
+            <ul id="color" name="color" onClick={handleColorOptionClick}>
+              {colorOptions.map((color) => (
+                <li key={color} id={color}>
+                  {color}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="genre">
           <p>genre</p>
